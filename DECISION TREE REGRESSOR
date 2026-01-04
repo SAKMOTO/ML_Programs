@@ -1,0 +1,20 @@
+'''import pandas as pd 
+import warnings
+from sklearn.tree import DecisionTreeRegressor
+import matplotlib.pyplot as plt 
+from sklearn.tree import plot_tree
+
+df = pd.DataFrame({
+    'housesize': [1500, 1800, 1200, 2100, 3000],
+    'price': [200000, 250000, 180000, 270000, 400000]  # Fixed the prices (removed extra zeros)
+})
+
+X = df[['housesize']]
+y = df['price']
+model = DecisionTreeRegressor(max_depth=2)
+model.fit(X, y)
+
+plot_tree(model, feature_names=['housesize'], filled=True)
+plt.show()
+warnings.filterwarnings("ignore",category=UserWarning)
+print("The house prediction is:", model.predict([[1600]]))  # Fixed: predcit → predict'''
